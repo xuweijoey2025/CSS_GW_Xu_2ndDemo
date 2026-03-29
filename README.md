@@ -2,10 +2,10 @@ This is a webpage design for the CSS Zen Garden redesign project.
 2 responses are prepared.
 
 Basic Information for Demo2:
-- Extra File: DESIGN.md (reference, no influence on the webpage)
-- Time Consumption: 30mins, 60mins debug
-- Tools: Stitch design system DESIGN.md, VS code GitHub Copilot (Claude sonnet 4.5)
-- Process Summary: Keep HTML, request applying the .md file and updating CSS
+- Extra Files: <imgs> folder containing background images
+- Time Consumption: Half of day design, Half of day debug
+- Tools: Figma MCP, VS code GitHub Copilot (Claude sonnet 4.5)
+- Process Summary: Code to canvas via MCP -> modify the layout -> transfer codes back to update CSS
 - Manual Browser Check: Chrome,Safari
 
 Demos:
