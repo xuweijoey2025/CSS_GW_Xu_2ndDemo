@@ -8,6 +8,10 @@ Basic Information for Demo2:
 - Process Summary: Code to canvas via MCP -> modify the layout -> transfer codes back to update CSS
 - Manual Browser Check: Chrome,Safari
 
-Demos:
+Webpage Demos:
 - Demo1 URL: https://xuweijoey2025.github.io/CSS_GW_Xu_1stDemo/
 - Demo2 URL: https://xuweijoey2025.github.io/CSS_GW_Xu_2ndDemo/
+
+Repositories:
+- Demo1 https://github.com/xuweijoey2025/CSS_GW_Xu_1stDemo
+- Demo2 https://github.com/xuweijoey2025/CSS_GW_Xu_2ndDemo
