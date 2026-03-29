@@ -1,0 +1,747 @@
+/* ZenDesign — CSS Zen Garden
+   Light theme mapped from Figma ZenDesign (He48VYaNFjsJmFVJGTVbhF).
+   CSS1/2 primary. CSS3 with vendor prefixes per Zen Garden submission guidelines.
+   IE9+, Chrome, Firefox, Safari, iOS, Android. Responsive. */
+
+/* CSS2: @import Google Fonts — Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700&display=swap');
+
+/* === RESET (CSS1/2) === */
+html {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	}
+
+/* === BASE (CSS1/2) === */
+body {
+	font-family: 'Noto Sans', georgia, sans-serif;
+	font-size: 16px;
+	line-height: 1.7;
+	color: #333333;
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;
+	}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+	}
+
+abbr {
+	border-bottom: none;
+	font-style: normal;
+	}
+
+/* === TYPOGRAPHY (CSS1/2) === */
+h1, h2, h3 {
+	font-family: 'Noto Sans', georgia, sans-serif;
+	margin-top: 0;
+	line-height: 1.25;
+	}
+
+h3 {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333333;
+	margin-bottom: 14px;
+	padding-bottom: 0;
+	border-bottom: none;
+	}
+
+/* Content h3: reserve space for left-bar accent.
+   Applies only inside .intro and .supporting — NOT in aside.sidebar. */
+.intro h3,
+.supporting h3 {
+	position: relative;
+	padding-left: 14px;
+	}
+
+/* CSS3: ::before left-bar accent — Zen Garden ::before requirement */
+.intro h3::before,
+.supporting h3::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 3px;
+	width: 4px;
+	height: 80%;
+	background-color: #888888;
+	}
+
+/* Lighter accent bar for dark explanation background */
+.explanation h3::before {
+	background-color: #cccccc;
+	}
+
+/* === LINKS (CSS1/2) === */
+a:link {
+	color: #839EBE;
+	font-weight: bold;
+	text-decoration: underline;
+	-webkit-transition: color 0.2s ease;
+	   -moz-transition: color 0.2s ease;
+	     -o-transition: color 0.2s ease;
+	        transition: color 0.2s ease;
+	}
+
+a:visited {
+	color: #839EBE;
+	text-decoration: underline;
+	}
+
+a:hover, a:focus, a:active {
+	color: #4077BA;
+	text-decoration: underline;
+	}
+
+/* === PAGE LAYOUT (CSS2) === */
+/* Sidebar flows to page bottom — no right-column reservation */
+.page-wrapper {
+	margin: 0 auto;
+	max-width: 1440px;
+	background-color: #ffffff;
+	position: relative;
+	padding: 0;
+	}
+
+/* === HEADER: full-width with multi-layer background (overlay + image) === */
+header[role="banner"] {
+	text-align: center;
+	padding: 90px 20px 70px 20px;
+	background-color: #c8bfb0;
+	background-image:
+		-webkit-linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+		url('imgs/ptn02.jpg');
+	background-image:
+		linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+		url('imgs/ptn02.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	}
+
+header h1 {
+	/* Cancel image-replacement technique from original HTML */
+	background: none;
+	width: auto;
+	height: auto;
+	float: none;
+	display: block;
+	text-indent: 0;
+	white-space: normal;
+	overflow: visible;
+
+	font-family: 'Noto Sans', georgia, sans-serif;
+	font-size: 72px;
+	font-weight: 100;
+	letter-spacing: 4px;
+	text-transform: none;
+	color: #111111;
+	margin-top: 0;
+	margin-bottom: 12px;
+	line-height: 1.1;
+	}
+
+header h2 {
+	/* Cancel image-replacement technique */
+	background: none;
+	width: auto;
+	height: auto;
+	float: none;
+	display: block;
+	text-indent: 0;
+	white-space: normal;
+	overflow: visible;
+
+	font-family: 'Noto Sans', georgia, sans-serif;
+	font-size: 22px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: none;
+	color: #111111;
+	margin-top: 0;
+	margin-bottom: 0;
+	}
+
+/* === SUMMARY: centred white card === */
+.summary {
+	clear: both;
+	width: 680px;
+	margin: 40px auto;
+	padding: 32px 36px;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+	-webkit-box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+	   -moz-box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+	        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+	text-align: center;
+	}
+
+.summary p {
+	font-size: 18px;
+	color: #333333;
+	line-height: 1.7;
+	margin-bottom: 1em;
+	}
+
+/* CSS3: :last-child */
+.summary p:last-child {
+	margin-bottom: 0;
+	}
+
+/* === PREAMBLE: full-width section with multi-layer background === */
+.preamble {
+	clear: both;
+	padding: 60px 20px;
+	background-color: #ede8e1;
+	background-image:
+		-webkit-linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+		url('imgs/ptn06.jpg');
+	background-image:
+		linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+		url('imgs/ptn06.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	}
+
+.preamble h3 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333333;
+	margin-bottom: 16px;
+	max-width: 984px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.preamble p {
+	font-size: 16px;
+	color: #333333;
+	max-width: 984px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+/* CSS3: :first-child — slightly larger lead paragraph */
+.preamble p:first-child {
+	font-size: 17px;
+	}
+
+/* === SUPPORTING: MAIN CONTENT === */
+.supporting {
+	clear: both;
+	}
+
+/* CSS3: ::after clearfix for floated columns */
+.supporting::after {
+	content: "";
+	display: block;
+	clear: both;
+	}
+
+/* Explanation: left column, dark grey (#5c5c5c from Figma) */
+.explanation {
+	float: left;
+	width: 50%;
+	padding: 40px 30px;
+	background-color: #5c5c5c;
+	color: #ffffff;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin-bottom: 0;
+	}
+
+.explanation h3 {
+	color: #ffffff;
+	}
+
+.explanation p {
+	font-size: 15px;
+	color: rgba(255, 255, 255, 0.88);
+	}
+
+/* CSS3: :first-child — brighter lead paragraph on dark bg */
+.explanation p:first-child {
+	font-size: 16px;
+	color: #ffffff;
+	}
+
+.explanation a:link,
+.explanation a:visited {
+	color: #dddddd;
+	}
+
+.explanation a:hover,
+.explanation a:focus {
+	color: #ffffff;
+	}
+
+/* Participation: right column, white */
+.participation {
+	float: left;
+	width: 50%;
+	padding: 40px 30px;
+	background-color: #ffffff;
+	color: #333333;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin-bottom: 0;
+	}
+
+.participation h3 {
+	color: #333333;
+	}
+
+.participation p {
+	font-size: 15px;
+	color: #555555;
+	}
+
+.participation p:first-child {
+	font-size: 16px;
+	color: #333333;
+	}
+
+/* Benefits: full-width with multi-layer background */
+.benefits {
+	clear: both;
+	padding: 60px 20px;
+	background-color: #c8bfb0;
+	background-image:
+		-webkit-linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)),
+		url('imgs/ptn03.jpg');
+	background-image:
+		linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)),
+		url('imgs/ptn03.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	}
+
+.benefits h3 {
+	font-size: 22px;
+	color: #333333;
+	max-width: 984px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.benefits p {
+	font-size: 15px;
+	color: #333333;
+	max-width: 984px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.benefits p:first-child {
+	font-size: 16px;
+	color: #111111;
+	}
+
+/* Requirements: light grey (#f5f5f5 from Figma) */
+.requirements {
+	clear: both;
+	padding: 50px calc(50vw - 50% + 20px);
+	background-color: #f5f5f5;
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	}
+
+.requirements h3 {
+	font-size: 22px;
+	color: #333333;
+	max-width: 984px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.requirements p {
+	font-size: 15px;
+	color: #555555;
+	max-width: 984px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.requirements p:first-child {
+	font-size: 16px;
+	color: #333333;
+	}
+
+/* CSS3: :last-child — de-emphasise attribution paragraph */
+.requirements p:last-child {
+	font-size: 13px;
+	color: #777777;
+	margin-bottom: 0;
+	}
+
+/* === FOOTER: 5 icon boxes with local images === */
+footer {
+	clear: both;
+	text-align: center;
+	padding: 30px calc(50vw - 50% + 20px);
+	background-color: #ffffff;
+	overflow: hidden;
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	}
+
+footer a:link,
+footer a:visited {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0 4px;
+	vertical-align: top;
+	text-align: center;
+	line-height: 100px;
+	font-family: 'Noto Sans', georgia, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
+	overflow: hidden;
+	-webkit-transition: opacity 0.2s ease;
+	   -moz-transition: opacity 0.2s ease;
+	     -o-transition: opacity 0.2s ease;
+	        transition: opacity 0.2s ease;
+	}
+
+footer a:hover,
+footer a:focus {
+	opacity: 0.80;
+	text-decoration: none;
+	color: #ffffff;
+	}
+
+footer a.zen-validate-html { background-image: url('imgs/sns01.jpg'); }
+footer a.zen-validate-css  { background-image: url('imgs/sns02.jpg'); }
+footer a.zen-license       { background-image: url('imgs/sns03.jpg'); }
+footer a.zen-accessibility { background-image: url('imgs/sns04.jpg'); }
+footer a.zen-github        { background-image: url('imgs/sns05.jpg'); }
+
+/* === SIDEBAR: static — flows to bottom === */
+.sidebar {
+	position: static;
+	width: auto;
+	margin: 0;
+	background-color: #ffffff;
+	}
+
+.sidebar .wrapper {
+	font-family: 'Noto Sans', georgia, sans-serif;
+	font-size: 16px;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin-top: 0;
+	width: auto;
+	}
+
+/* Safety: sidebar h3 must not inherit content-section ::before bar */
+.sidebar h3::before {
+	display: none;
+	}
+
+/* Override image-replacement on sidebar headings */
+.sidebar h3.select,
+.sidebar h3.archives,
+.sidebar h3.resources {
+	background: none;
+	width: auto;
+	height: auto;
+	text-indent: 0;
+	white-space: normal;
+	overflow: visible;
+
+	font-family: 'Noto Sans', georgia, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 0;
+	text-transform: none;
+	text-align: center;
+	margin: 0 0 24px 0;
+	padding: 0;
+	border-bottom: none;
+	color: #333333;
+	position: static;
+	}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	}
+
+.sidebar li {
+	list-style-type: none;
+	background: none;
+	border-bottom: none;
+	padding: 0;
+	margin-bottom: 0;
+	line-height: 1.6;
+	}
+
+/* CSS3: :first-child/:last-child — Zen Garden structural pseudo-class requirement */
+/* Scoped to non-card lists (archives, resources) to avoid stripping design card padding */
+.design-archives li:first-child,
+.zen-resources li:first-child { padding-top: 0; }
+.sidebar li:last-child  { margin-bottom: 0; }
+
+/* design-selection: full-width background + card grid */
+.design-selection {
+	padding: 50px 20px;
+	background-color: #ede8e1;
+	background-image:
+		-webkit-linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+		url('imgs/ptn05.jpg');
+	background-image:
+		linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+		url('imgs/ptn05.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	}
+
+.design-selection h3.select {
+	color: #111111;
+	font-size: 28px;
+	}
+
+/* Design card grid: inline-block tiles (CSS2 — IE9 safe) */
+.design-selection nav ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1000px;
+	text-align: center;
+	font-size: 0;
+	}
+
+.design-selection nav li {
+	display: inline-block;
+	width: 220px;
+	min-height: 160px;
+	margin: 6px;
+	vertical-align: top;
+	text-align: left;
+	padding: 20px 14px;
+	font-size: 16px;
+	color: #777777;
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	-webkit-transition: -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+	   -moz-transition:    -moz-transform 0.4s ease,    -moz-box-shadow 0.4s ease;
+	     -o-transition:         transform 0.4s ease,         box-shadow 0.4s ease;
+	        transition:         transform 0.4s ease,         box-shadow 0.4s ease;
+	}
+
+.design-selection nav li:hover {
+	-webkit-transform: translateY(-2px);
+	   -moz-transform: translateY(-2px);
+	    -ms-transform: translateY(-2px);
+	     -o-transform: translateY(-2px);
+	        transform: translateY(-2px);
+	-webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	   -moz-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	}
+
+/* CSS3: :nth-child — individual card background colors */
+.design-selection nav li:nth-child(1) { background-color: #F5F5F5; }
+.design-selection nav li:nth-child(2) { background-color: #E9EEF1; }
+.design-selection nav li:nth-child(3) { background-color: #F6F4F2; }
+.design-selection nav li:nth-child(4) { background-color: #F1F4F9; }
+.design-selection nav li:nth-child(5) { background-color: #E3DDD7; }
+.design-selection nav li:nth-child(6) { background-color: #E4E4E4; }
+.design-selection nav li:nth-child(7) { background-color: #ECEEF0; }
+.design-selection nav li:nth-child(8) { background-color: #F1F2F4; }
+
+.sidebar li a.design-name {
+	display: block;
+	color: #333333;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.3;
+	text-decoration: underline;
+	margin-bottom: 4px;
+	}
+
+.sidebar li a.design-name:visited { color: #555555; }
+.sidebar li a.design-name:hover,
+.sidebar li a.design-name:focus   { color: #000000; }
+
+.sidebar li a.designer-name {
+	display: block;
+	color: #777777;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: underline;
+	}
+
+.sidebar li a.designer-name:visited { color: #888888; }
+.sidebar li a.designer-name:hover,
+.sidebar li a.designer-name:focus   { color: #333333; }
+
+/* design-archives: centred simple links */
+.design-archives {
+	padding: 40px 20px;
+	text-align: center;
+	background-color: #ffffff;
+	}
+
+.design-archives nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	}
+
+.design-archives nav li {
+	display: inline-block;
+	margin: 0 14px;
+	font-size: 16px;
+	}
+
+.design-archives nav li a:link,
+.design-archives nav li a:visited {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: underline;
+	}
+
+.design-archives nav li a:hover,
+.design-archives nav li a:focus,
+.design-archives nav li a:active { color: #4077BA; }
+
+.sidebar li.next .indicator { color: #555555; }
+
+/* zen-resources: black bar with horizontal resource links */
+.zen-resources {
+	background-color: #111111;
+	padding: 28px calc(50vw - 50% + 20px);
+	text-align: center;
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	}
+
+.sidebar h3.resources { color: #ffffff; }
+
+.zen-resources ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	}
+
+.zen-resources li {
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 16px;
+	}
+
+.zen-resources li a:link,
+.zen-resources li a:visited {
+	font-size: 15px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: underline;
+	}
+
+.zen-resources li a:hover,
+.zen-resources li a:focus { color: #cccccc; }
+
+/* === EXTRA DIVS: hidden — ::before/::after used for decoration instead === */
+.extra1, .extra2, .extra3,
+.extra4, .extra5, .extra6 {
+	display: none;
+	}
+
+/* === RESPONSIVE: Tablet (CSS3 @media — IE9+) === */
+@media screen and (max-width: 900px) {
+
+	.summary {
+		width: auto;
+		margin: 30px 20px;
+		}
+
+	.explanation,
+	.participation {
+		float: none;
+		width: auto;
+		-webkit-box-sizing: content-box;
+		   -moz-box-sizing: content-box;
+		        box-sizing: content-box;
+		}
+
+	.design-selection nav li {
+		width: 195px;
+		min-height: 140px;
+		}
+
+	}
+
+/* === RESPONSIVE: Mobile (CSS3 @media — IE9+) === */
+@media screen and (max-width: 600px) {
+
+	header[role="banner"] { padding: 50px 15px 40px 15px; }
+	header h1 { font-size: 40px; letter-spacing: 2px; }
+	header h2 { font-size: 16px; letter-spacing: 1px; }
+
+	.summary { margin: 20px 12px; padding: 20px; }
+	.summary p { font-size: 15px; }
+
+	.preamble { padding: 40px 15px; }
+	.explanation,
+	.participation { padding: 25px 15px; }
+	.benefits { padding: 40px 15px; }
+	.requirements { padding: 30px 15px; }
+
+	footer a:link,
+	footer a:visited {
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		margin: 3px;
+		font-size: 11px;
+		}
+
+	.design-selection { padding: 30px 12px; }
+
+	.design-selection nav li {
+		width: 140px;
+		min-height: 120px;
+		padding: 12px 8px;
+		font-size: 14px;
+		}
+
+	.sidebar li a.design-name { font-size: 15px; }
+
+	.design-archives { padding: 30px 12px; }
+	.design-archives nav li { display: block; margin: 8px auto; }
+
+	.zen-resources { padding: 20px 12px; }
+	.zen-resources li { display: block; margin: 6px 0; }
+
+	}
