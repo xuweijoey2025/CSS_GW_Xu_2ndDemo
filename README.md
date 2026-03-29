@@ -9,5 +9,5 @@ Basic Information for Demo1:
 - Manual Browser Check: Chrome,Safari
 
 Demos:
-Demo1 URL: https://xuweijoey2025.github.io/CSS_GW_Xu_1stDemo/
-Demo2 URL: https://xuweijoey2025.github.io/CSS_GW_Xu_2ndDemo/
+- Demo1 URL: https://xuweijoey2025.github.io/CSS_GW_Xu_1stDemo/
+- Demo2 URL: https://xuweijoey2025.github.io/CSS_GW_Xu_2ndDemo/
